@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="e82fe5b8-7c3a-486f-986f-f8226b30e4de" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="haiFlow" doc:id="63d64a02-f0ed-4301-a07e-1faf4c745d02" >
+		<http:listener doc:name="Listener" doc:id="c2cfb970-43ab-4bc2-9ad5-ac276a3855bb" config-ref="HTTP_Listener_config" path="/hai"/>
+		<set-payload value='"hai chadhu happy birthday "' doc:name="Set Payload" doc:id="d56f4110-0fc4-4e94-88ed-f6f3396b0545" />
+	</flow>
+</mule>
